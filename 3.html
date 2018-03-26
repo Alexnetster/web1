@@ -14,20 +14,25 @@
     gtag('config', 'UA-115911023-1');
   </script>
 </head>
-<body>
+<body data-mode="day">
   <h1><a href="index.html">WEB</a></h1>
+  <div id="grid">
+    <ol>
+    <div>
   <input type="button" value="night" onclick="
-    var pbody = document.querySelector('body')
-    pbody.style.backgroundColor='black';
-    pbody.style.color='white';
+    var target = document.querySelector('body');
+    if(this.value === 'day') {
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      this.value = 'night';
+    }
+    else {
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      this.value = 'day';
+    }
   ">
-  <input type="button" value="day" onclick="
-    var pbody = document.querySelector('body')
-    pbody.style.backgroundColor='white';
-    pbody.style.color='black';
-  ">
-<div id="grid">
-<ol>
+</div>
   <li><a href="1.html">HTML</a></li>
   <li><a href="2.html">CSS</a></li>
   <li><a href="3.html">JavaScript</a></li>
