@@ -25,11 +25,11 @@
     </script>
     <h3>JavaScript Array</h3>
     <script>
-      var coworkers = ["egoing","leezche"];
-      document.write(coworkers[0] + "<br>");
-      document.write(coworkers[1] + "<br>");
-      coworkers.push("emart");
-      document.write(coworkers[2] + "<br>");
+      var coworkersArray = ["egoing","leezche"];
+      document.write(coworkersArray[0] + "<br>");
+      document.write(coworkersArray[1] + "<br>");
+      coworkersArray.push("emart");
+      document.write(coworkersArray[2] + "<br>");
     </script>
     <h3>JavaScript Class</h3>
     <script>
@@ -43,6 +43,35 @@
       document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
       coworkers["data scientist"] = "taeho";
       document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+    </script>
+    <h3>Iterater 1 - for in</h3>
+    <script>
+      for(var key in coworkers) {
+        document.write(key + " : " + coworkers[key] + "<br>");
+      }
+    </script>
+    <h3>Iterater 2 - for</h3>
+    <script>
+      for(var idx = 0; idx < coworkersArray.length; ++idx) {
+        document.write(coworkersArray[idx] + "<br>");
+      }
+    </script>
+    <h3>Iterater 3 - while</h3>
+    <script>
+      var i = 0;
+      while(i < coworkersArray.length) {
+        document.write(coworkersArray[i] + "<br>");
+        i = i + 1;
+      }
+    </script>
+    <h3>Property & Method</h3>
+    <script>
+      coworkers.showAll = function() {
+        for(var key in this) {
+          document.write(key + " : " + this[key] + "<br>");
+        }
+      }
+      coworkers.showAll();
     </script>
   </body>
 </html>
