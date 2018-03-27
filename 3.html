@@ -13,38 +13,43 @@
 
     gtag('config', 'UA-115911023-1');
 
-    function changeColorATag(textColor) {
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length) {
-         console.log(alist[i]);
-         alist[i].style.color = textColor;
-         i = i + 1;
+    var links = {
+      changeColor: function(textColor) {
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length) {
+             console.log(alist[i]);
+             alist[i].style.color = textColor;
+             i = i + 1;
+          }
+        }
+    }
+    var body = {
+      changeColor: function(color)
+      {
+        var target = document.querySelector('body');
+        target.style.color = color;
+      },
+      changeBGColor: function(color)
+      {
+        var target = document.querySelector('body');
+        target.style.backgroundColor = color;
       }
-    }
-    function changeColorBodyTag(target, color)
-    {
-      target.style.color=color;
-    }
-    function changeBGColorBodyTag(target, color)
-    {
-      target.style.backgroundColor=color;
     }
     function nightdayhandler(self) {
-      var target = document.querySelector('body');
       if(self.value === 'day') {
-        changeBGColorBodyTag(target, 'white');
-        changeColorBodyTag(target, 'black');
+        body.changeBGColor('white');
+        body.changeColor('black');
         self.value = 'night';
 
-        changeColorATag('powderblue');
+        links.changeColor('powderblue');
       }
       else {
-        changeBGColorBodyTag(target,'black');
-        changeColorBodyTag(target, 'white');
+        body.changeBGColor('black');
+        body.changeColor('white');
         self.value = 'day';
 
-        changeColorATag('yellow');
+        links.changeColor('yellow');
       }
     }
   </script>
