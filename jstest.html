@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>comparison operator & Boolean</h1>
+    <h2>===</h2>
+    <h3>1===1</h3>
+    <script>
+      document.write(1===1);
+    </script>
+    <h3>1===2</h3>
+    <script>
+      document.write(1===2);
+    </script>
+    <h3>1&lt;2</h3>
+    <script>
+      document.write(1<2);
+    </script>
+    <h3>1&lt;1</h3>
+    <script>
+      document.write(1<1);
+    </script>
+    <h3>JavaScript Array</h3>
+    <script>
+      var coworkers = ["egoing","leezche"];
+      document.write(coworkers[0] + "<br>");
+      document.write(coworkers[1] + "<br>");
+      coworkers.push("emart");
+      document.write(coworkers[2] + "<br>");
+    </script>
+    <h3>JavaScript Class</h3>
+    <script>
+      var coworkers = {
+        "programmer" : "egoing",
+        "designer" : "leezche"
+      };
+      document.write("programmer : " + coworkers.programmer + "<br>");
+      document.write("designer : " + coworkers.designer + "<br>");
+      coworkers.bookkeeper = "duru";
+      document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+      coworkers["data scientist"] = "taeho";
+      document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+    </script>
+  </body>
+</html>
