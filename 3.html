@@ -12,6 +12,41 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-115911023-1');
+
+    function changeColorATag(textColor) {
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length) {
+         console.log(alist[i]);
+         alist[i].style.color = textColor;
+         i = i + 1;
+      }
+    }
+    function changeColorBodyTag(target, color)
+    {
+      target.style.color=color;
+    }
+    function changeBGColorBodyTag(target, color)
+    {
+      target.style.backgroundColor=color;
+    }
+    function nightdayhandler(self) {
+      var target = document.querySelector('body');
+      if(self.value === 'day') {
+        changeBGColorBodyTag(target, 'white');
+        changeColorBodyTag(target, 'black');
+        self.value = 'night';
+
+        changeColorATag('powderblue');
+      }
+      else {
+        changeBGColorBodyTag(target,'black');
+        changeColorBodyTag(target, 'white');
+        self.value = 'day';
+
+        changeColorATag('yellow');
+      }
+    }
   </script>
 </head>
 <body data-mode="day">
@@ -19,30 +54,7 @@
   <div id="grid">
     <ol>
     <div>
-  <input type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    var links = document.querySelectorAll('a');
-    var i = 0;
-    if(this.value === 'day') {
-      target.style.backgroundColor='white';
-      target.style.color='black';
-      this.value = 'night';
-      while(i < links.length) {
-        links[i].style.color='powderblue';
-        i = i + 1;
-      }
-    }
-    else {
-      target.style.backgroundColor='black';
-      target.style.color='white';
-      this.value = 'day';
-
-      while(i < links.length) {
-        links[i].style.color='blue';
-        i = i + 1;
-      }
-    }
-  ">
+  <input type="button" value="night" onclick="nightdayhandler(this);">
 </div>
   <li><a href="1.html">HTML</a></li>
   <li><a href="2.html">CSS</a></li>
