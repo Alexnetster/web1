@@ -4,6 +4,7 @@
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script src="day_night.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115911023-1"></script>
   <script>
@@ -12,53 +13,13 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-115911023-1');
-
-    var links = {
-      changeColor: function(textColor) {
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length) {
-             console.log(alist[i]);
-             alist[i].style.color = textColor;
-             i = i + 1;
-          }
-        }
-    }
-    var body = {
-      changeColor: function(color)
-      {
-        var target = document.querySelector('body');
-        target.style.color = color;
-      },
-      changeBGColor: function(color)
-      {
-        var target = document.querySelector('body');
-        target.style.backgroundColor = color;
-      }
-    }
-    function nightdayhandler(self) {
-      if(self.value === 'day') {
-        body.changeBGColor('white');
-        body.changeColor('black');
-        self.value = 'night';
-
-        links.changeColor('powderblue');
-      }
-      else {
-        body.changeBGColor('black');
-        body.changeColor('white');
-        self.value = 'day';
-
-        links.changeColor('yellow');
-      }
-    }
   </script>
 </head>
 <body data-mode="day">
   <h1><a href="index.html">WEB</a></h1>
-  <div id="grid">
-    <ol>
-    <div>
+<div id="grid">
+<ol>
+<div>
   <input type="button" value="night" onclick="nightdayhandler(this);">
 </div>
   <li><a href="1.html">HTML</a></li>
